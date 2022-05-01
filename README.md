@@ -535,7 +535,7 @@ foreign key (User_id) references Users (User_id) on delete cascade);
 ~~~
 功能：用户注册
 类型：POST
-URL：users/signin
+URL：user/signin
 提供参数：username, userpassword, usersex, phonenummber, email, birthday, userintroduction, location, userphoto
 返回参数：backmsg{userid}
 返回信息:  【code = 0, type = success, msg = "注册成功"】	
@@ -558,7 +558,7 @@ URL：users/signin
 ~~~
 功能：用户登陆
 类型：POST
-URL：users/login
+URL：user/login
 提供参数：username, userpassword
 返回参数：backmsg{(userid, username, userpassword, usersex, phonenumber, email, birthday, userintroduction, location, userphoto, createtime), (collectid, collecttitle, collectphoto), (songid, songname, singerid, singername, permission, check)}
 返回信息：【code = 0, type = success, msg = "登陆成功"】	
@@ -580,7 +580,7 @@ URL：users/login
 ~~~
 功能：更新用户信息
 类型：POST
-URL：users/update/infomation
+URL：user/update/infomation
 提供参数：userid, username, userpassword, usersex, phonenumber, email, birthday, userintroduction, location, userphoto
 返回参数：无
 返回信息：【code = 0, type = success, msg = "修改成功"】	
@@ -602,7 +602,7 @@ URL：users/update/infomation
 ~~~
 功能：注销用户
 类型：POST
-URL：users/signout
+URL：user/signout
 提供参数：userid, username, userpassword
 返回参数：无
 返回信息：【code = 0, type = success, msg = "注销成功"】	

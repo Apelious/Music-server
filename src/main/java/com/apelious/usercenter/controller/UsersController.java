@@ -1,7 +1,6 @@
 package com.apelious.usercenter.controller;
 
-import com.apelious.usercenter.service.UsersService;
-import org.springframework.web.bind.annotation.PostMapping;
+import com.apelious.usercenter.service.UserService;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +16,7 @@ import javax.annotation.Resource;
 public class UsersController {
 
     @Resource
-    private UsersService usersService;
+    private UserService userService;
 
 //    @PostMapping("/regester")
 //    public int userRegester(){
