@@ -13,13 +13,13 @@ import javax.annotation.Resource;
  */
 @RestController
 @RequestMapping("/user")
-public class UsersController {
+public class UserController {
 
     @Resource
     private UserService userService;
-
+//
 //    @PostMapping("/regester")
 //    public int userRegester(){
-//        usersService.userRegister()
+//        userService.userRegister()
 //    }
 }

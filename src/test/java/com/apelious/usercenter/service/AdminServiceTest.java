@@ -52,7 +52,7 @@ public class AdminServiceTest {
 
     @Test
     public void testGetUser() {
-        String name = "canxi";
+        String name = "can";
 //        List<User>userList= adminService.searchUsers(name);
 //        System.out.println(userList.size());
     }

@@ -99,7 +99,7 @@ public class AdminServiceImpl extends ServiceImpl<AdminMapper, Admin>
     }
 
     @Override
-    public List<User> searchUsers(String username) {
+    public List<User> searchUsers(String username, HttpServletRequest request) {
         QueryWrapper<User> queryWrapper = new QueryWrapper<>();
         if (StringUtils.isNotBlank(username)) {
             queryWrapper.like("user_name", username);

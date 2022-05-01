@@ -40,7 +40,7 @@ public interface AdminService extends IService<Admin> {
      */
     int adminLogout(HttpServletRequest request);
 
-    List<User> searchUsers(String username);
+    List<User> searchUsers(String username, HttpServletRequest request);
 
 
     boolean deleteUser(@RequestBody int id, HttpServletRequest request);
