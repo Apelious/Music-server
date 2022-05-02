@@ -33,8 +33,8 @@ public interface UserService extends IService<User> {
     /**
      * 用户脱敏
      *
-     * @param originUser
-     * @return
+     * @param originUser 原本的数据
+     * @return 脱敏后的数据
      */
     User getSafetyUser(User originUser);
 }

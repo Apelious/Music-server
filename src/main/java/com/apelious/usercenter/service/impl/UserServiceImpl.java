@@ -123,8 +123,8 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, User>
     /**
      * 用户脱敏
      *
-     * @param originUser
-     * @return
+     * @param originUser 原本的user内容
+     * @return 脱敏后的User内容
      */
     @Override
     public User getSafetyUser(User originUser) {

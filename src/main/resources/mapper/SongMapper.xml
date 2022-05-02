@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apelious.usercenter.mapper.SongMapper">
+
+    <resultMap id="BaseResultMap" type="com.apelious.usercenter.domain.Song">
+            <id property="songId" column="song_id" jdbcType="INTEGER"/>
+            <result property="songName" column="song_name" jdbcType="VARCHAR"/>
+            <result property="lrcUrl" column="lrc_url" jdbcType="VARCHAR"/>
+            <result property="album" column="album" jdbcType="VARCHAR"/>
+            <result property="releaseTime" column="release_time" jdbcType="TIMESTAMP"/>
+            <result property="songTag" column="song_tag" jdbcType="INTEGER"/>
+            <result property="isDelete" column="is_delete" jdbcType="INTEGER"/>
+            <result property="isUpload" column="is_upload" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        song_id,song_name,lrc_url,
+        album,release_time,song_tag,
+        is_delete,is_upload
+    </sql>
+</mapper>

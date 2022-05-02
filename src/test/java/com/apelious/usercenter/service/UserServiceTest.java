@@ -40,7 +40,7 @@ public class UserServiceTest {
 
     @Test
     void userRegister() {
-        String userAccount = "Apelious";
+        String userAccount = "Apelious1";
         String userPassword = "13719561029Cx";
         String checkPassword = "13719561029Cx";
         String userName = "canxian";

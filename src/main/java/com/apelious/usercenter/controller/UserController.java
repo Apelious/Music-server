@@ -1,18 +1,20 @@
 package com.apelious.usercenter.controller;
 
-<<<<<<< HEAD:src/main/java/com/apelious/usercenter/controller/UsersController.java
-import com.apelious.usercenter.domain.request.UsersRegisterRequest;
-import com.apelious.usercenter.service.UsersService;
+
+import com.apelious.usercenter.domain.User;
+import com.apelious.usercenter.domain.request.UserLoginResquest;
+import com.apelious.usercenter.domain.request.UserRegisterRequest;
+import com.apelious.usercenter.service.UserService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-=======
-import com.apelious.usercenter.service.UserService;
->>>>>>> orign/cyc:src/main/java/com/apelious/usercenter/controller/UserController.java
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 /**
  *  用户接口
@@ -24,26 +26,36 @@ import javax.annotation.Resource;
 public class UserController {
 
     @Resource
-<<<<<<< HEAD:src/main/java/com/apelious/usercenter/controller/UsersController.java
-    private UsersService usersService;
+    private UserService userService;
 
     @PostMapping("/register")
-    public int userRegister(@RequestBody UsersRegisterRequest usersRegisterRequest){
-        if(usersRegisterRequest == null){
+    public int userRegister(@RequestBody UserRegisterRequest userRegisterRequest){
+        if(userRegisterRequest == null){
             return -1;
         }
-        String userAccount = usersRegisterRequest.getUserAccount();
-        String userPassword = usersRegisterRequest.getUserPassword();
-        String checkPassword = usersRegisterRequest.getCheckPassword();
-        String userName = usersRegisterRequest.getUserName();
-        return usersService.userRegister(userAccount,userPassword,checkPassword,userName);
+        String userAccount = userRegisterRequest.getUserAccount();
+        String userPassword = userRegisterRequest.getUserPassword();
+        String checkPassword = userRegisterRequest.getCheckPassword();
+        String userName = userRegisterRequest.getUserName();
+        return userService.userRegister(userAccount,userPassword,checkPassword,userName);
     }
-=======
-    private UserService userService;
-//
-//    @PostMapping("/regester")
-//    public int userRegester(){
-//        userService.userRegister()
-//    }
->>>>>>> orign/cyc:src/main/java/com/apelious/usercenter/controller/UserController.java
+
+    @PostMapping("/login")
+    public User userLogin(@RequestBody UserLoginResquest userLoginResquest, HttpServletRequest request){
+        if(userLoginResquest == null){
+            return null;
+        }
+        String userAccount = userLoginResquest.getUserAccount();
+        String userPassword = userLoginResquest.getUserPassword();
+        return userService.userLogin(userAccount, userPassword, request);
+    }
+
+    @PostMapping("/search")
+    public List<User> searchUsers(String userName){
+        QueryWrapper queryWrapper = new QueryWrapper<>();
+        if(StringUtils.isNotBlank(userName)){
+            queryWrapper.like("suer_name", userName);
+        }
+        return userService.list(queryWrapper);
+    }
 }

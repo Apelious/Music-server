@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apelious.usercenter.mapper.SingerMapper">
+
+    <resultMap id="BaseResultMap" type="com.apelious.usercenter.domain.Singer">
+            <id property="singerId" column="singer_id" jdbcType="INTEGER"/>
+            <result property="singerName" column="singer_name" jdbcType="VARCHAR"/>
+            <result property="singerGender" column="singer_gender" jdbcType="INTEGER"/>
+            <result property="country" column="country" jdbcType="VARCHAR"/>
+            <result property="singerIntroduction" column="singer_introduction" jdbcType="VARCHAR"/>
+            <result property="photoUrl" column="photo_url" jdbcType="VARCHAR"/>
+            <result property="isDelete" column="is_delete" jdbcType="INTEGER"/>
+            <result property="isUpload" column="is_upload" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        singer_id,singer_name,singer_gender,
+        country,singer_introduction,photo_url,
+        is_delete,is_upload
+    </sql>
+</mapper>
