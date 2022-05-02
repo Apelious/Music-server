@@ -42,13 +42,13 @@ LOCK TABLES `admin` WRITE;
 UNLOCK TABLES;
 
 --
--- Table structure for table `users`
+-- Table structure for table `user`
 --
 
-DROP TABLE IF EXISTS `users`;
+DROP TABLE IF EXISTS `user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `users` (
+CREATE TABLE `user` (
   `user_id` int NOT NULL AUTO_INCREMENT COMMENT '每个用户的唯一标识符',
   `user_account` varchar(20) NOT NULL COMMENT '用户账号',
   `user_name` varchar(32) NOT NULL COMMENT '用户名字',
@@ -68,13 +68,13 @@ CREATE TABLE `users` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `users`
+-- Dumping data for table `user`
 --
 
-LOCK TABLES `users` WRITE;
-/*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,'dcx772204','dcx','1232465',0,'','',NULL,'','','','2022-04-29 20:22:48',0),(2,'Apelious','dai','aec35f029fbd72817da4f06647386ab9',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2022-04-30 18:24:59',0);
-/*!40000 ALTER TABLE `users` ENABLE KEYS */;
+LOCK TABLES `user` WRITE;
+/*!40000 ALTER TABLE `user` DISABLE KEYS */;
+INSERT INTO `user` VALUES (1,'dcx772204','dcx','1232465',0,'','',NULL,'','','','2022-04-29 20:22:48',0),(2,'Apelious','dai','aec35f029fbd72817da4f06647386ab9',NULL,NULL,NULL,NULL,NULL,NULL,NULL,'2022-04-30 18:24:59',0);
+/*!40000 ALTER TABLE `user` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 

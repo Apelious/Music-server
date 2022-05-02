@@ -10,9 +10,9 @@ import lombok.Data;
  * 这个表描述用户信息
  * @TableName users
  */
-@TableName(value ="users")
+@TableName(value ="user")
 @Data
-public class Users implements Serializable {
+public class User implements Serializable {
     /**
      * 每个用户的唯一标识符
      */
@@ -94,7 +94,7 @@ public class Users implements Serializable {
         if (getClass() != that.getClass()) {
             return false;
         }
-        Users other = (Users) that;
+        User other = (User) that;
         return (this.getUserId() == null ? other.getUserId() == null : this.getUserId().equals(other.getUserId()))
             && (this.getUserAccount() == null ? other.getUserAccount() == null : this.getUserAccount().equals(other.getUserAccount()))
             && (this.getUserName() == null ? other.getUserName() == null : this.getUserName().equals(other.getUserName()))
