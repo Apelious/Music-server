@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.apelious.usercenter.mapper.MapSsMapper">
+
+    <resultMap id="BaseResultMap" type="com.apelious.usercenter.domain.MapSs">
+            <id property="singerId" column="singer_id" jdbcType="INTEGER"/>
+            <id property="songId" column="song_id" jdbcType="INTEGER"/>
+            <result property="isUpload" column="is_upload" jdbcType="INTEGER"/>
+            <result property="isDelete" column="is_delete" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        singer_id,song_id,is_upload,
+        is_delete
+    </sql>
+</mapper>
